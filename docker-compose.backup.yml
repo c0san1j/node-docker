@@ -1,0 +1,14 @@
+version: '3'
+services:
+  node-app:
+    build: .
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./:/app:ro
+      - /app/node_modules
+    environment:
+      - PORT=3000
+    # env_file:
+    #   - ./.env
+# docker run -v %cd%:/app:ro -v /app/node_modules --env-file ./.env -p 3000:5000 -d --name node-app node-app-image
