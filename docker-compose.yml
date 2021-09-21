@@ -31,6 +31,9 @@ services:
 
   redis:
     image: redis
+    volumes:
+      - redis-cache:/data
 
 volumes:
   mongo-db:
+  redis-cache:
