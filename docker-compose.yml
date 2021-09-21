@@ -2,6 +2,8 @@ version: '3'
 services:
   nginx:
     image: nginx:stable-alpine
+    ports:
+      - '3000:80'
     volumes:
       - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
   node-app:
@@ -20,7 +22,7 @@ services:
     # restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: Saotome&2338
+      MONGO_INITDB_ROOT_PASSWORD: mypassword
     volumes:
       - mongo-db:/data/db
     # ports:

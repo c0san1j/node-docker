@@ -15,12 +15,12 @@ services:
       - PORT=3000
       - NODE_ENV=development
       - MONGO_USER=root
-      - MONGO_PASSWORD=Saotome&2338
-      - SESSION_SECRET=blackcat
+      - MONGO_PASSWORD=mypassword
+      - SESSION_SECRET=secret
     command: npm run dev
   mongo:
     image: mongo
     # restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: Saotome&2338
+      MONGO_INITDB_ROOT_PASSWORD: mypassword
